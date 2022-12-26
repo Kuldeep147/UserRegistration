@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
     String firstName;
+    String lastName;
     public static void main(String[] args) {
         UserRegistration users = new UserRegistration();
         users.addUser();
@@ -20,9 +21,19 @@ public class UserRegistration {
         Matcher mat = p1.matcher(fName);
         boolean b = mat.matches();
         if(b){
-            this.firstName = fName;
+            firstName = fName;
         }else{
             System.out.println("Invalid First name.");
+        }
+        System.out.println("Enter last name : ");
+        String lName = sc.nextLine();
+        Pattern p2 = Pattern.compile("^[A-Z]+[a-z]{2,}");
+        Matcher l = p2.matcher(lName);
+        boolean b1 = l.matches();
+        if(b1){
+            lastName = lName;
+        }else{
+            System.out.println("Invalid last name.");
         }
 
     }
