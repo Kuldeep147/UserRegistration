@@ -60,7 +60,7 @@ public class UserRegistration {
         }
         System.out.println("Enter password : ");
         String pass = sc.nextLine();
-        Pattern p5 = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$");
+        Pattern p5 = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()+-=]).{8,}$");
         Matcher pas = p5.matcher(pass);
         boolean b4 = pas.matches();
         if(b4){
