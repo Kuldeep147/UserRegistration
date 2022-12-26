@@ -9,6 +9,7 @@ public class UserRegistration {
     String firstName;
     String lastName;
     String eMail;
+    String phoneNumber;
     public static void main(String[] args) {
         UserRegistration users = new UserRegistration();
         users.addUser();
@@ -45,6 +46,16 @@ public class UserRegistration {
             eMail = email;
         }else{
             System.out.println("Invalid email id.");
+        }
+        System.out.println("Enter phone number : ");
+        String pNum = sc.nextLine();
+        Pattern p4 = Pattern.compile("^(\\d{2}[- .]?){1}\\d{10}$");
+        Matcher ph = p4.matcher(pNum);
+        boolean b3 = ph.matches();
+        if(b3){
+            phoneNumber = pNum;
+        }else{
+            System.out.println("Invalid phone number.");
         }
 
     }
