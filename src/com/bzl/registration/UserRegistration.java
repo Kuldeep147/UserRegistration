@@ -10,6 +10,7 @@ public class UserRegistration {
     String lastName;
     String eMail;
     String phoneNumber;
+    String password;
     public static void main(String[] args) {
         UserRegistration users = new UserRegistration();
         users.addUser();
@@ -56,6 +57,16 @@ public class UserRegistration {
             phoneNumber = pNum;
         }else{
             System.out.println("Invalid phone number.");
+        }
+        System.out.println("Enter password : ");
+        String pass = sc.nextLine();
+        Pattern p5 = Pattern.compile("^(?=.*[a-z])().{8,}$");
+        Matcher pas = p5.matcher(pass);
+        boolean b4 = pas.matches();
+        if(b4){
+            password = pass;
+        }else{
+            System.out.println("Invalid password.");
         }
 
     }
