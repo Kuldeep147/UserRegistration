@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 public class UserRegistration {
     String firstName;
     String lastName;
+    String eMail;
     public static void main(String[] args) {
         UserRegistration users = new UserRegistration();
         users.addUser();
@@ -34,6 +35,16 @@ public class UserRegistration {
             lastName = lName;
         }else{
             System.out.println("Invalid last name.");
+        }
+        System.out.println("Enter email id : ");
+        String email = sc.nextLine();
+        Pattern p3 = Pattern.compile("[a-zA-Z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-za-z]{2,})$");
+        Matcher ema = p3.matcher(email);
+        boolean b2 = ema.matches();
+        if(b2){
+            eMail = email;
+        }else{
+            System.out.println("Invalid email id.");
         }
 
     }
