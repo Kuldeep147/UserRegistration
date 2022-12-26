@@ -13,7 +13,7 @@ public class UserRegistration {
     String password;
     public static void main(String[] args) {
         UserRegistration users = new UserRegistration();
-        users.addUser();
+        users.checkEmail();
 
     }
     public void addUser(){
@@ -69,5 +69,18 @@ public class UserRegistration {
             System.out.println("Invalid password.");
         }
 
+    }
+    public void checkEmail(){
+        System.out.println("Enter email id : ");
+        Scanner sb = new Scanner(System.in);
+        String email = sb.nextLine();
+        Pattern p3 = Pattern.compile("[a-zA-Z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-za-z]{2,})$");
+        Matcher ema = p3.matcher(email);
+        boolean b2 = ema.matches();
+        if(b2){
+            System.out.println("Valid email...");
+        }else{
+            System.out.println("Invalid email id...");
+        }
     }
 }
